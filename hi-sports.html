@@ -1,0 +1,104 @@
+<!doctype html>
+
+<script>
+
+function startTimer() {
+  var presentTime = document.getElementById('timer').innerHTML;
+  var timeArray = presentTime.split(/[:]+/);
+  var m = timeArray[0];
+  var s = checkSecond((timeArray[1] - 1));
+  if(s==59){m=m-1}
+  if(m<0){
+    return
+  }
+  
+  document.getElementById('timer').innerHTML =
+    m + ":" + s;
+  console.log(m)
+  setTimeout(startTimer, 1000);
+  
+}
+
+function checkSecond(sec) {
+  if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
+  if (sec < 0) {sec = "59"};
+  return sec;
+}
+</script>
+
+<style>
+div{
+  background-color:#419D78;
+  color:#EFD0CA;
+  font-size:20px;
+  text-align:center;
+}
+</style>
+
+<html>
+<head>
+<title>HI SPORTS</title>
+</head>
+<body>
+<div style="background-color:blue;">
+<p>WELLCOME TO THE AMAZING HI SPORTS</p>
+<p>we will start by jumping</p>
+<p>50 times </p>
+<p>1,2...</p>
+<p>perfect</p>
+<p>now get a ball or if you don't roll a sock together to make a ball</p>
+<p>now run with the ball around a table for 50 times</p>
+<p>fantastic</p>
+<p>do this list of sports starting now!</p>
+<p>soccer
+basketball
+tennis
+baseball
+golf
+running
+volleyball
+badminton
+swimming
+boxing
+table tennis
+skiing
+ice skating
+roller skating
+cricket
+rugby
+pool
+darts
+football
+bowling
+ice hockey
+surfing
+karate
+horse racing
+snowboarding
+skateboarding
+cycling
+archery
+fishing
+gymnastics
+figure skating
+rock climbing
+sumo wrestling</p>
+<p>by the way</p>
+<p>do them only if you can</p>
+<p>good</p>
+<p>remember do them evry day</p>
+<img src="istockphoto-1141191007-612x612.jpg"/>
+<p>now take a 5 min rest</p>
+
+<button onclick="startTimer()">Have a rest</button>
+
+<div>Time left = <span id="timer"></span>
+<script>
+document.getElementById('timer').innerHTML =
+  05 + ":" + 00;
+</script>
+
+
+
+
+
